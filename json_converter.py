@@ -11,4 +11,3 @@ except FileNotFoundError:
     print("Error: service_catalog.yaml not found")
 except yaml.YAMLError:
     print("Error: service catalog is corrupted")
-
