@@ -1,0 +1,23 @@
+{
+    "registry": "aero-registry",
+    "owner": "platform-team@aeropay.io",
+    "version": "1.1",
+    "updated": "2026-09-21",
+    "services": null,
+    "\u00a0 - name": "api-gateway",
+    "\u00a0 \u00a0 version": "3.5.0",
+    "\u00a0 \u00a0 owner": "platform-team@aeropay.io",
+    "\u00a0 \u00a0 environment": "production",
+    "\u00a0 \u00a0 status": "healthy",
+    "\u00a0 \u00a0 health_url": "/health/api-gateway",
+    "\u00a0 \u00a0 ports": [
+        8080
+    ],
+    "\u00a0 \u00a0 dependencies": [
+        "auth-svc",
+        "payment-gateway"
+    ],
+    "\u00a0 \u00a0 resources": null,
+    "\u00a0 \u00a0 \u00a0 cpu": "2.0",
+    "\u00a0 \u00a0 \u00a0 memory": "2Gi"
+}
