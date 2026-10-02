@@ -1,0 +1,28 @@
+print("1. Explain the difference between PUT and PATCH. One AeroPay situation where each is the right method.")
+print("PUT replaces the entire resource representation with the provided payload, requiring all required mutable fields.")
+print("PATCH applies partial updates, modifying only the specific fields supplied in the request body.")
+print("In AeroPay, PUT is ideal when performing a full specification overwrite during a clean CI/CD redeployment.")
+print("PATCH is ideal for isolated operational updates, such as setting a service's status to 'maintenance'.")
+print()
+
+print("2. Why does idempotency matter when syncing a config file into a registry, and how did your sync_registry.py ensure it?")
+print("Idempotency ensures that executing a synchronization operation multiple times produces the exact same system state without duplicate records.")
+print("In sync_registry.py, idempotency is ensured by fetching existing services first and checking if a service name is already registered.")
+print("If found, it sends a PATCH update to the existing ID instead of creating duplicate POST requests.")
+print()
+
+print("3. For storing service config, give one strength and one weakness of each: JSON, YAML, XML.")
+print("JSON is natively supported across almost all modern web APIs, but it lacks support for inline comments and can be verbose.")
+print("YAML is highly readable and supports inline comments, but its indentation-based parsing can lead to subtle hierarchy bugs.")
+print("XML provides robust structural validation via schemas, but it suffers from excessive boilerplate tags that make manual editing tedious.")
+print()
+
+print("4. The registry replies 401, then 404, then 500. What does each mean, and what would you check first for each?")
+print("A 401 Unauthorized error means the request lacks valid credentials; check if the X-API-Key header is present and accurate.")
+print("A 404 Not Found error means the requested endpoint or resource ID does not exist; check the request URI path and service ID.")
+print("A 500 Internal Server Error indicates an unhandled server error; check the server-side log output to diagnose runtime crashes.")
+print()
+
+print("5. Why is a local mock API (like this one) useful during development, and one thing a mock cannot verify?")
+print("A local mock API allows developers to build and test code offline without depending on live infrastructure or incurring network latency.")
+print("However, a mock cannot verify real-world downstream behaviors, such as actual database constraints, real network latency, or backend integration errors.")
