@@ -20,7 +20,7 @@ class RegistryClient:
     return self._request("GET", "services", params=params).json()
 
  def get_service(self, service_id): # GET /services/{id} -> parsed JSON
-    return self._request("GET", f"services", params=params).json()
+    return self._request("GET", f"services/{service_id}").json()
  def create_service(self, payload): # POST /services -> parsed JSON (201)
     return self._request("POST", "services", json=payload).json()
  def update_service(self, service_id, payload): # PUT /services/{id} (full replace)
